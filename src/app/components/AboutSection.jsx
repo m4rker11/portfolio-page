@@ -1,94 +1,169 @@
 "use client";
+
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
 
-const TAB_DATA = [
+const SKILLS_CATEGORIES = [
   {
-    title: "Skills",
-    id: "skills",
-    content: (
-      <ul className="list-disc pl-2">
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
-        <li>JavaScript</li>
-        <li>React</li>
-      </ul>
-    ),
+    title: "Languages",
+    items: ["Python", "Java", "Node.js"]
   },
   {
-    title: "Education",
-    id: "education",
-    content: (
-      <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
-      </ul>
-    ),
+    title: "Databases",
+    items: ["MongoDB", "SQL", "Postgres", "Vector Databases", "DB Schema Design"]
   },
   {
-    title: "Certifications",
-    id: "certifications",
-    content: (
-      <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
-      </ul>
-    ),
+    title: "AI/ML & NLP",
+    items: [
+      "TensorFlow",
+      "PyTorch",
+      "ML",
+      "Model Building",
+      "Deep Learning",
+      "OpenAI",
+      "NLP",
+      "Langchain",
+      "Llama Index",
+      "Embeddings",
+      "Generative AI"
+    ]
   },
+  {
+    title: "Frameworks & Libraries",
+    items: ["React", "Express", "Flask", "Spring Boot", "FastAPI", "Django", "Celery"]
+  },
+  {
+    title: "Cloud & DevOps",
+    items: ["AWS", "Kubernetes", "Docker", "CI/CD (CircleCI, Github Actions)", "Redis", "Kafka"]
+  },
+  {
+    title: "Tools & Technologies",
+    items: ["Unix", "REST", "Git", "Microservices", "Junit", "PyTest", "Pandas", "Twilio"]
+  },
+  {
+    title: "Other Skills",
+    items: ["Orchestration", "Project Management", "Sales", "Cold Outreach", "Automation", "Statistics", "Self-Driven"]
+  }
 ];
+
+const EDUCATION_DATA = [
+  { title: "NYU BS in Neuroscience", content: "Placeholder content for NYU" },
+  { title: "UCSB Psychology", content: "Placeholder content for UCSB" },
+  { title: "Columbia Fintech Bootcamp", content: "Placeholder content for Columbia" }
+];
+
+// Controlled DropdownItem – it no longer manages its own state.
+const DropdownItem = ({ title, children, isOpen, onToggle }) => {
+  return (
+    <div className="mb-2">
+      <button
+        onClick={onToggle}
+        className="flex items-center w-full text-left hover:bg-gray-800 rounded px-2 py-1 transition-colors"
+      >
+        <span className="mr-2">{isOpen ? "▼" : "▸"}</span>
+        <span>{title}</span>
+      </button>
+      {isOpen && (
+        <div className="ml-6 border-l-2 border-gray-700 pl-4">
+          {children}
+        </div>
+      )}
+    </div>
+  );
+};
 
 const AboutSection = () => {
   const [tab, setTab] = useState("skills");
+  // This state tracks the title of the currently open dropdown
+  const [openDropdown, setOpenDropdown] = useState(null);
   const [isPending, startTransition] = useTransition();
 
   const handleTabChange = (id) => {
     startTransition(() => {
       setTab(id);
+      // Clear any open dropdown when switching tabs
+      setOpenDropdown(null);
     });
   };
 
   return (
     <section className="text-white" id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/images/about-image.png" width={500} height={500} />
+        <Image 
+          src="/images/about-image.png" 
+          width={500} 
+          height={500} 
+          alt="About me" 
+        />
+
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+            I am a full stack developer with expertise spanning AI/ML, blockchain, 
+            and modern web technologies. My interdisciplinary background in 
+            neuroscience and technical fields enables me to approach problems 
+            with unique perspective and depth.
           </p>
-          <div className="flex flex-row justify-start mt-8">
+
+          <div className="flex flex-row justify-start mt-8 space-x-2">
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
             >
-              {" "}
-              Skills{" "}
+              Skills
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
-              {" "}
-              Education{" "}
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("certifications")}
-              active={tab === "certifications"}
-            >
-              {" "}
-              Certifications{" "}
+              Education
             </TabButton>
           </div>
-          <div className="mt-8">
-            {TAB_DATA.find((t) => t.id === tab).content}
+
+          {/* Wrapping the dropdown list in a container with a fixed minimum height */}
+          <div className="mt-8 min-h-[500px]">
+            {tab === "skills" ? (
+              <div>
+                {SKILLS_CATEGORIES.map((category) => (
+                  <DropdownItem
+                    key={category.title}
+                    title={category.title}
+                    isOpen={openDropdown === category.title}
+                    onToggle={() =>
+                      setOpenDropdown(
+                        openDropdown === category.title ? null : category.title
+                      )
+                    }
+                  >
+                    <ul className="list-disc pl-4 space-y-2">
+                      {category.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </DropdownItem>
+                ))}
+              </div>
+            ) : (
+              <div>
+                {EDUCATION_DATA.map((education) => (
+                  <DropdownItem
+                    key={education.title}
+                    title={education.title}
+                    isOpen={openDropdown === education.title}
+                    onToggle={() =>
+                      setOpenDropdown(
+                        openDropdown === education.title ? null : education.title
+                      )
+                    }
+                  >
+                    <div className="text-gray-300">
+                      {education.content}
+                    </div>
+                  </DropdownItem>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
