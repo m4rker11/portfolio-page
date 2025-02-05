@@ -22,14 +22,20 @@ const HeroSection = () => {
             <br></br>
             <TypeAnimation
               sequence={[
-                "Judy",
-                1000,
-                "Web Developer",
-                1000,
-                "Mobile Developer",
-                1000,
-                "UI/UX Designer",
-                1000,
+                "Mark",
+                2000,
+                "Backend Engineer",
+                2000,
+                "AI Developer",
+                2000,
+                "Automation Nerd",
+                2000,
+                "Proud Cat Parent",
+                2000,
+                "Gardener",
+                2000,
+                "Chasing Curiosity...",
+                2000,
               ]}
               wrapper="span"
               speed={50}
@@ -52,7 +58,7 @@ const HeroSection = () => {
               className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
             >
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
-                Download CV
+                Download Resume
               </span>
             </Link>
           </div>
