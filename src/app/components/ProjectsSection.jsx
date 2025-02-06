@@ -13,6 +13,21 @@ const projectsData = [
     tag: ["All", "Work"],
     gitUrl: "/",
     previewUrl: "/",
+    // Placeholder achievements data for this project
+    achievements: [
+      {
+        prefix: "",
+        metric: "Users",
+        value: "100",
+        postfix: "+",
+      },
+      {
+        prefix: "",
+        metric: "Deployments",
+        value: "5",
+        postfix: "",
+      },
+    ],
   },
   {
     id: 2,
@@ -22,6 +37,14 @@ const projectsData = [
     tag: ["All", "Leisure"],
     gitUrl: "/",
     previewUrl: "/",
+    achievements: [
+      {
+        prefix: "",
+        metric: "Downloads",
+        value: "50",
+        postfix: "+",
+      },
+    ],
   },
   {
     id: 3,
@@ -31,6 +54,14 @@ const projectsData = [
     tag: ["All", "Work"],
     gitUrl: "/",
     previewUrl: "/",
+    achievements: [
+      {
+        prefix: "",
+        metric: "Integrations",
+        value: "10",
+        postfix: "+",
+      },
+    ],
   },
   {
     id: 4,
@@ -40,6 +71,14 @@ const projectsData = [
     tag: ["All", "Leisure"],
     gitUrl: "/",
     previewUrl: "/",
+    achievements: [
+      {
+        prefix: "",
+        metric: "Candidates",
+        value: "500",
+        postfix: "+",
+      },
+    ],
   },
   {
     id: 5,
@@ -49,6 +88,14 @@ const projectsData = [
     tag: ["All", "Work"],
     gitUrl: "/",
     previewUrl: "/",
+    achievements: [
+      {
+        prefix: "",
+        metric: "Listings",
+        value: "20",
+        postfix: "+",
+      },
+    ],
   },
   {
     id: 6,
@@ -58,6 +105,14 @@ const projectsData = [
     tag: ["All", "Work"],
     gitUrl: "/",
     previewUrl: "/",
+    achievements: [
+      {
+        prefix: "",
+        metric: "Leads",
+        value: "200",
+        postfix: "+",
+      },
+    ],
   },
   {
     id: 7,
@@ -67,6 +122,14 @@ const projectsData = [
     tag: ["All", "Leisure"],
     gitUrl: "/",
     previewUrl: "/",
+    achievements: [
+      {
+        prefix: "",
+        metric: "Cats",
+        value: "10",
+        postfix: "+",
+      },
+    ],
   },
   {
     id: 8,
@@ -76,6 +139,14 @@ const projectsData = [
     tag: ["All", "Leisure"],
     gitUrl: "/",
     previewUrl: "/",
+    achievements: [
+      {
+        prefix: "",
+        metric: "Sails",
+        value: "3",
+        postfix: "",
+      },
+    ],
   },
   {
     id: 9,
@@ -85,6 +156,31 @@ const projectsData = [
     tag: ["All", "Leisure"],
     gitUrl: "/",
     previewUrl: "/",
+    achievements: [
+      {
+        prefix: "",
+        metric: "Plants",
+        value: "25",
+        postfix: "+",
+      },
+    ],
+  },
+  {
+    id: 10,
+    title: "Soulbound Graduation Token",
+    description: "Project 5 description",
+    image: "/images/projects/6.png",
+    tag: ["All", "Leisure"],
+    gitUrl: "/",
+    previewUrl: "/",
+    achievements: [
+      {
+        prefix: "",
+        metric: "Tokens",
+        value: "1",
+        postfix: "",
+      },
+    ],
   }
 ];
 
@@ -131,20 +227,31 @@ const ProjectsSection = () => {
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
         {filteredProjects.map((project, index) => (
           <motion.li
-            key={index}
+            key={project.id}
             variants={cardVariants}
             initial="initial"
             animate={isInView ? "animate" : "initial"}
             transition={{ duration: 0.3, delay: index * 0.4 }}
           >
             <ProjectCard
-              key={project.id}
               title={project.title}
               description={project.description}
               imgUrl={project.image}
               gitUrl={project.gitUrl}
               previewUrl={project.previewUrl}
             />
+            {project.achievements && (
+              <div className="mt-4 p-2 bg-gray-800 rounded-md">
+                <ul className="flex flex-row items-center justify-between mx-4 my-4 sm:my-0">
+                  {project.achievements.map((achievement, aIndex) => (
+                    <li key={aIndex} className="text-gray-300 text-xs px-2">
+                      {achievement.prefix}
+                      {achievement.value}
+                      {achievement.postfix} {achievement.metric}
+                    </li>
+                  ))}
+                </ul>
+              </div>)}
           </motion.li>
         ))}
       </ul>

@@ -100,10 +100,11 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I am a full stack developer with expertise spanning AI/ML, blockchain, 
-            and modern web technologies. My interdisciplinary background in 
-            neuroscience and technical fields enables me to approach problems 
-            with unique perspective and depth.
+            I am a backend engineer with Full-Stack experience across many tech stacks. 
+            With a background in Psychology, Neuroscience, Blockchain, AI, and Software Engineering, 
+            I went through a number of fields before landing in backend engineering. Each step gave me a different way of thinking: whether it was understanding how people process information, how systems interact, or how technology evolves. 
+
+            That mix shapes how I approach problems and build solutions today. And I want to leverage my unique skills to build products that helps those that need it most. 
           </p>
 
           <div className="flex flex-row justify-start mt-8 space-x-2">
