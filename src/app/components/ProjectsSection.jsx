@@ -210,7 +210,7 @@ const ProjectsSection = () => {
               blogUrl={project.blogUrl}
             />
             {project.achievements && (
-              <div className="mt-4 p-2 bg-gray-800 rounded-md">
+              <div className="mt-4 p-2 bg-gray-800 rounded-md border-solid border-2 border-gray-800 hover:border-[#a855f7]">
                 <ul className="flex flex-row items-center justify-between mx-4 my-4 sm:my-0">
                   {project.achievements.map((achievement, aIndex) => (
                     <li key={aIndex} className="text-gray-300 text-xs px-2">
