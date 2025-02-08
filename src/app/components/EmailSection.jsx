@@ -8,9 +8,9 @@ import Image from "next/image";
 const EmailSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [
-    '/images/hero-image.png',
-    '/images/about-image.png',
-    '/images/hero-image2.png',
+    '/images/buddha.jpg',
+    '/images/corner.jpg',
+    '/images/terrarium.jpg',
   ];
 
   useEffect(() => {
@@ -38,10 +38,10 @@ const EmailSection = () => {
   return (
     <section
       id="contact"
-      className="grid md:grid-cols-3 my-12 md:my-12 py-24 gap-4 relative"
+      className="grid z--10 md:grid-cols-3 my-12 md:my-12 py-24 gap-4 relative"
     >
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
-      <div className="z-10 max-w-[300px]">
+      <div className="max-w-[300px]">
         <h5 className="text-xl font-bold text-white my-2">
           Let&apos;s Connect
         </h5>
@@ -49,15 +49,15 @@ const EmailSection = () => {
           Schedule a call with me! I'm excited to discuss opportunities and ideas.
         </p>
         <div className="socials flex flex-row gap-2 mb-8">
-          <Link href="github.com">
+          <Link href="https://github.com/m4rker11/">
             <Image src={GithubIcon} alt="Github Icon" />
           </Link>
-          <Link href="linkedin.com">
+          <Link href="https://www.linkedin.com/in/markzarutin/">
             <Image src={LinkedinIcon} alt="Linkedin Icon" />
           </Link>
         </div>
         <h6 className="text-lg font-semibold text-white mb-4 break-words">
-          I had some empty space so I'm using it as a garden
+          I had some empty space so here are some plants to brighten it up
         </h6>
         <div className="relative w-[300px] h-[300px] rounded-lg overflow-hidden group">
           <Image
@@ -81,11 +81,11 @@ const EmailSection = () => {
           </button>
         </div>
       </div>
-      <div className="z-10 col-span-2 -ml-20">
+      <div className="col-span-2 -ml-20">
         <iframe
-          src="https://calendly.com/matthewh-retool/qualification-call-community-support"
-          width="100%"
-          height="660px"
+          src="https://cal.com/zarutin/30min"
+          width="105%"
+          height="680px"
         />
       </div>
     </section>

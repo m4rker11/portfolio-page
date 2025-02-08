@@ -11,22 +11,18 @@ const SKILLS_CATEGORIES = [
   },
   {
     title: "Databases",
-    items: ["MongoDB", "SQL", "Postgres", "Vector Databases", "DB Schema Design"]
+    items: ["MongoDB", "SQL", "Postgres", "Vector Databases (chroma, pinecone, pgvector)", "DB Schema Design"]
   },
   {
-    title: "AI/ML & NLP",
+    title: "AI/ML",
     items: [
       "TensorFlow",
       "PyTorch",
-      "ML",
-      "Model Building",
-      "Deep Learning",
-      "OpenAI",
+      "Scikit-Learn",
+      "Pandas",
       "NLP",
-      "Langchain",
-      "Llama Index",
-      "Embeddings",
-      "Generative AI"
+      "Langchain/Langgraph",
+      "Llama",
     ]
   },
   {
@@ -43,17 +39,16 @@ const SKILLS_CATEGORIES = [
   },
   {
     title: "Other Skills",
-    items: ["Orchestration", "Project Management", "Sales", "Cold Outreach", "Automation", "Statistics", "Self-Driven"]
+    items: ["AI Orchestration", "Project Management", "Sales", "Cold Outreach", "Automation", "Statistics", ]
   }
 ];
 
 const EDUCATION_DATA = [
-  { title: "NYU BS in Neuroscience", content: "Placeholder content for NYU" },
-  { title: "UCSB Psychology", content: "Placeholder content for UCSB" },
-  { title: "Columbia Fintech Bootcamp", content: "Placeholder content for Columbia" }
+  { title: "NYU BS in Neuroscience", items: ["Computational Neuroscience", "Agile Development", "Operating Systems"]  },
+  { title: "UCSB Psychology", items: ["Social Psychology", "Statistics for Social Sciences"]  },
+  { title: "Columbia Fintech Bootcamp", items: ["Python for Financial Analysis", "Financial Modeling", "Data Visualization"] }
 ];
 
-// Controlled DropdownItem – it no longer manages its own state.
 const DropdownItem = ({ title, children, isOpen, onToggle }) => {
   return (
     <div className="mb-2">
@@ -91,9 +86,9 @@ const AboutSection = () => {
     <section className="text-white" id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <Image 
-          src="/images/about-image.png" 
+          src="/images/catdev.png" 
           width={500} 
-          height={500} 
+          height={800} 
           alt="About me" 
         />
 
@@ -158,9 +153,11 @@ const AboutSection = () => {
                       )
                     }
                   >
-                    <div className="text-gray-300">
-                      {education.content}
-                    </div>
+                   <ul className="list-disc pl-4 space-y-2">
+                      {education.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
                   </DropdownItem>
                 ))}
               </div>

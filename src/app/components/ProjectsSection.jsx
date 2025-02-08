@@ -8,180 +8,149 @@ const projectsData = [
   {
     id: 1,
     title: "BrightBoundAI",
-    description: "Project 1 description",
-    image: "/images/projects/1.png",
+    description: "End-to-End AI Cold Email Platform, and the github of the open source version.",
+    image: "/images/projects/bbai.png",
     tag: ["All", "Work"],
-    gitUrl: "/",
-    previewUrl: "/",
-    // Placeholder achievements data for this project
+    gitUrl: "https://github.com/m4rker11/brightboundai",
     achievements: [
       {
         prefix: "",
-        metric: "Users",
-        value: "100",
+        metric: "Contacted Leads",
+        value: "200,000",
         postfix: "+",
       },
       {
         prefix: "",
-        metric: "Deployments",
-        value: "5",
+        metric: "Commits",
+        value: "585",
         postfix: "",
       },
-    ],
-  },
-  {
-    id: 2,
-    title: "StudyAI",
-    description: "Project 2 description",
-    image: "/images/projects/2.png",
-    tag: ["All", "Leisure"],
-    gitUrl: "/",
-    previewUrl: "/",
-    achievements: [
       {
         prefix: "",
-        metric: "Downloads",
-        value: "50",
-        postfix: "+",
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: "Tremaine",
-    description: "Project 3 description",
-    image: "/images/projects/3.png",
-    tag: ["All", "Work"],
-    gitUrl: "/",
-    previewUrl: "/",
-    achievements: [
-      {
-        prefix: "",
-        metric: "Integrations",
-        value: "10",
-        postfix: "+",
-      },
-    ],
-  },
-  {
-    id: 4,
-    title: "JobSearch",
-    description: "Project 4 description",
-    image: "/images/projects/4.png",
-    tag: ["All", "Leisure"],
-    gitUrl: "/",
-    previewUrl: "/",
-    achievements: [
-      {
-        prefix: "",
-        metric: "Candidates",
-        value: "500",
-        postfix: "+",
-      },
-    ],
-  },
-  {
-    id: 5,
-    title: "Veo Fence Properties",
-    description: "Authentication and CRUD operations",
-    image: "/images/projects/5.png",
-    tag: ["All", "Work"],
-    gitUrl: "/",
-    previewUrl: "/",
-    achievements: [
-      {
-        prefix: "",
-        metric: "Listings",
-        value: "20",
-        postfix: "+",
-      },
-    ],
-  },
-  {
-    id: 6,
-    title: "Lead Database",
-    description: "Project 5 description",
-    image: "/images/projects/6.png",
-    tag: ["All", "Work"],
-    gitUrl: "/",
-    previewUrl: "/",
-    achievements: [
-      {
-        prefix: "",
-        metric: "Leads",
-        value: "200",
-        postfix: "+",
-      },
-    ],
-  },
-  {
-    id: 7,
-    title: "Cat Tower",
-    description: "Project 5 description",
-    image: "/images/projects/6.png",
-    tag: ["All", "Leisure"],
-    gitUrl: "/",
-    previewUrl: "/",
-    achievements: [
-      {
-        prefix: "",
-        metric: "Cats",
-        value: "10",
-        postfix: "+",
-      },
-    ],
-  },
-  {
-    id: 8,
-    title: "Da Boat",
-    description: "Project 5 description",
-    image: "/images/projects/6.png",
-    tag: ["All", "Leisure"],
-    gitUrl: "/",
-    previewUrl: "/",
-    achievements: [
-      {
-        prefix: "",
-        metric: "Sails",
+        metric: "Iterations",
         value: "3",
         postfix: "",
       },
     ],
   },
   {
-    id: 9,
-    title: "Automated Garden",
-    description: "Project 5 description",
-    image: "/images/projects/6.png",
+    id: 2,
+    title: "Veo Fence Properties",
+    description: "Advanced geofencing system optimizing performance and user experience across all devices.",
+    image: "/images/projects/maps.jpg",
+    tag: ["All", "Work"],
+    previewUrl: "https://www.veoride.com/",
+    achievements: [
+      {
+        prefix: "",
+        metric: "Users",
+        value: "3M",
+        postfix: "+",
+      },
+      {
+        prefix: "",
+        metric: "Standardized Frontends",
+        value: "3",
+        postfix: "",
+      },
+      {
+        prefix: "",
+        metric: "Fewer Fences",
+        value: "20%",
+        postfix: "",
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "JobSearch",
+    description: "AI and API enabled table for all aspects of job search: tracking, writing and following up with recruiters.",
+    image: "/images/projects/jobsearch.png",
     tag: ["All", "Leisure"],
     gitUrl: "/",
     previewUrl: "/",
     achievements: [
       {
         prefix: "",
-        metric: "Plants",
-        value: "25",
+        metric: "Applications",
+        value: "90",
         postfix: "+",
       },
+      {
+        prefix: "",
+        metric: "Interview Rate",
+        value: "10",
+        postfix: "%",
+      },
+
     ],
   },
   {
-    id: 10,
-    title: "Soulbound Graduation Token",
-    description: "Project 5 description",
-    image: "/images/projects/6.png",
-    tag: ["All", "Leisure"],
-    gitUrl: "/",
-    previewUrl: "/",
+    id: 4,
+    title: "Tremaine",
+    description: "One of BrightBoundAI clients needed an updated website, they got it.",
+    image: "/images/projects/tremaine.png",
+    tag: ["All", "Work"],
+    previewUrl: "tremaine.us",
     achievements: [
       {
         prefix: "",
-        metric: "Tokens",
+        metric: "Full Website Upgrade",
         value: "1",
         postfix: "",
       },
+      {
+        prefix: "",
+        metric: "Wix Profits",
+        value: "19$",
+        postfix: "/month",
+      }
     ],
-  }
+  },
+  {
+    id: 5,
+    title: "Soulbound Graduation Token",
+    description: "Graduation project, providing graduates with a non-transferable token for their graduation horse.",
+    image: "/images/projects/sbt.png",
+    tag: ["All", "Leisure"],
+    gitUrl: "https://github.com/m4rker11/SBT-Columbia-2022",
+    previewUrl: "https://sbt-columbia-2022.vercel.app/",
+    achievements: [
+      {
+        prefix: "",
+        metric: "Weeks of Development",
+        value: "2",
+        postfix: "",
+      },
+      {
+        prefix: "",
+        metric: "Happy Graduates",
+        value: "26",
+        postfix: "",
+      },
+    ]
+  },
+  {
+    id: 6,
+    title: "StudyAI",
+    description: "AI Generated study materials, tutoring, and quizzes based on your books or content.",
+    image: "/images/projects/StudyAI.png",
+    tag: ["All", "Leisure"],
+    achievements: [
+      {
+        prefix: "",
+        metric: "Founders",
+        value: "2",
+        postfix: "",
+      },
+      {
+        prefix: "",
+        metric: "Desire to Sell",
+        value: "0",
+        postfix: "",
+      },
+    ],
+  },
 ];
 
 const ProjectsSection = () => {
@@ -231,7 +200,7 @@ const ProjectsSection = () => {
             variants={cardVariants}
             initial="initial"
             animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.4 }}
+            transition={{ duration: 0.2, delay: index * 0.2 }}
           >
             <ProjectCard
               title={project.title}
@@ -239,6 +208,7 @@ const ProjectsSection = () => {
               imgUrl={project.image}
               gitUrl={project.gitUrl}
               previewUrl={project.previewUrl}
+              blogUrl={project.blogUrl}
             />
             {project.achievements && (
               <div className="mt-4 p-2 bg-gray-800 rounded-md">
