@@ -67,8 +67,7 @@ const projectsData = [
     description: "AI and API enabled table for all aspects of job search: tracking, writing and following up with recruiters.",
     image: "/images/projects/jobsearch.png",
     tag: ["All", "Leisure"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/m4rker11/nocodb-job-search",
     achievements: [
       {
         prefix: "",
