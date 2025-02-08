@@ -46,7 +46,7 @@ const EmailSection = () => {
           Let&apos;s Connect
         </h5>
         <p className="text-[#ADB7BE] mb-4">
-          Schedule a call with me! I'm excited to discuss opportunities and ideas.
+          Schedule a call with me! I am excited to discuss opportunities and ideas.
         </p>
         <div className="socials flex flex-row gap-2 mb-8">
           <Link href="https://github.com/m4rker11/">
