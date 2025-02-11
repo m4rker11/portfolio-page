@@ -49,10 +49,10 @@ const EmailSection = () => {
           Schedule a call with me! I am excited to discuss opportunities and ideas.
         </p>
         <div className="socials flex flex-row gap-2 mb-8">
-          <Link href="https://github.com/m4rker11/">
+          <Link href="https://github.com/m4rker11/" target="_blank">
             <Image src={GithubIcon} alt="Github Icon" />
           </Link>
-          <Link href="https://www.linkedin.com/in/markzarutin/">
+          <Link href="https://www.linkedin.com/in/markzarutin/" target="_blank">
             <Image src={LinkedinIcon} alt="Linkedin Icon" />
           </Link>
         </div>
