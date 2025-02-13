@@ -6,6 +6,7 @@ import EmailSection from "./components/EmailSection";
 import Footer from "./components/Footer";
 import AchievementsSection from "./components/AchievementsSection";
 import Resume from "./components/Resume";
+import { Analytics } from "@vercel/analytics/react"
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <EmailSection />
       </div>
       <Footer />
+      <Analytics/>
     </main>
   );
 }
