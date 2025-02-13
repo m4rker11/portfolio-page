@@ -17,11 +17,14 @@ const HeroSection = () => {
         >
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
-              Hello, I&apos;m Mark{" "}
+              Hello, I&apos;m{" "}
+              <span className="animate-fadeOut">Mark</span>
             </span>
             <br></br>
             <TypeAnimation
               sequence={[
+                "Mark",
+                2000,
                 "Backend Engineer",
                 2000,
                 "Chasing Curiosity",
