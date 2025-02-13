@@ -23,11 +23,11 @@ const achievementsList = [
   },
   {
     metric: "Years of Experience",
-    value: "4+",
+    value: "3+",
   },
   {
     metric: "Personalized Emails",
-    value: "200000",
+    value: "600000",
     postfix: "+",
   },
 ];
