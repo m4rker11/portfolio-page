@@ -38,10 +38,12 @@ const EmailSection = () => {
   return (
     <section
       id="contact"
-      className="grid z--10 md:grid-cols-3 my-12 md:my-12 py-24 gap-4 relative"
+      className="grid md:grid-cols-3 my-12 md:my-12 py-24 gap-4 relative"
     >
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
-      <div className="max-w-[300px]">
+      
+      {/* Desktop Layout */}
+      <div className="hidden md:block max-w-[300px]">
         <h5 className="text-xl font-bold text-white my-2">
           Let&apos;s Connect
         </h5>
@@ -81,11 +83,38 @@ const EmailSection = () => {
           </button>
         </div>
       </div>
-      <div className="col-span-2 -ml-20">
+
+      {/* Desktop Calendar */}
+      <div className="hidden md:block col-span-2 md:-ml-20 w-full">
         <iframe
           src="https://cal.com/zarutin/30min"
-          width="105%"
-          height="680px"
+          width="100%"
+          height="100vh"
+          className="md:h-[680px]"
+        />
+      </div>
+
+      {/* Mobile Layout */}
+      <div className="md:hidden w-full col-span-3">
+        <h5 className="text-xl font-bold text-white my-2">
+          Let&apos;s Connect
+        </h5>
+        <p className="text-[#ADB7BE] mb-4">
+          Schedule a call with me! I am excited to discuss opportunities and ideas.
+        </p>
+        <div className="socials flex flex-row gap-2 mb-8">
+          <Link href="https://github.com/m4rker11/" target="_blank">
+            <Image src={GithubIcon} alt="Github Icon" />
+          </Link>
+          <Link href="https://www.linkedin.com/in/markzarutin/" target="_blank">
+            <Image src={LinkedinIcon} alt="Linkedin Icon" />
+          </Link>
+        </div>
+        <iframe
+          src="https://cal.com/zarutin/30min"
+          width="100%"
+          height="1450px"
+          className="rounded-lg"
         />
       </div>
     </section>

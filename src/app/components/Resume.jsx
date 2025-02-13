@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Resume = () => {
   const [showOptions, setShowOptions] = useState(false);
@@ -60,19 +61,40 @@ const Resume = () => {
             animate={{ opacity: 1, y: 0 }}
             className="w-full"
           >
-            <object
-              data="/resume.pdf#toolbar=0"
-              type="application/pdf"
-              className="w-full h-[1100px]"
-            >
-              <p className="text-[#ADB7BE]">
-                Your browser does not support PDFs. Please download the PDF to
-                view it:{" "}
-                <a href="/resume.pdf" className="text-primary-500 underline">
-                  Download PDF
-                </a>
-              </p>
-            </object>
+            {/* Desktop PDF View */}
+            <div className="hidden md:block">
+              <object
+                data="/resume.pdf#toolbar=0"
+                type="application/pdf"
+                className="w-full h-[1100px]"
+              >
+                <p className="text-[#ADB7BE]">
+                  Your browser does not support PDFs. Please download the PDF to
+                  view it:{" "}
+                  <a href="/resume.pdf" className="text-primary-500 underline" download="Mark_Zarutin_Software_Engineer_Resume.pdf">
+                    Download PDF
+                  </a>
+                </p>
+              </object>
+            </div>
+
+            {/* Mobile Image View */}
+            <div className="md:hidden w-full relative">
+              <Image
+                src="/images/resume.png"
+                alt="Resume"
+                width={800}
+                height={1100}
+                className="w-full h-auto"
+              />
+              <a 
+                href="/resume.pdf" 
+                download = "Mark_Zarutin_Software_Engineer_Resume.pdf"
+                className="mt-4 block text-center px-6 py-3 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 text-white"
+              >
+                Download PDF
+              </a>
+            </div>
           </motion.div>
         </>
       )}
